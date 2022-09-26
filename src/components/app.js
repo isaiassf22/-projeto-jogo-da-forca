@@ -31,6 +31,7 @@ export default function Jogar() {
     let tracos = []
 
     let factor=''
+    const [selectLetters, setSelectLetters]=React.useState([])
 
     function Palavras() {
 
@@ -54,11 +55,12 @@ export default function Jogar() {
     }
     const [result,currentResult]=React.useState(tracos)
 
-    
+    Palavras()
     function Letters(){
         function letter (props){
             factor=props
             console.log(factor)
+            setSelectLetters([...selectLetters, factor])
             for (let i=0;i<caracteres.length;i++){
                 if(caracteres[i]===factor){
                     console.log(`achei um ${factor}`)
@@ -143,7 +145,7 @@ export default function Jogar() {
                 <div className="right-side">
                     <button className="escolher" onClick={chooseWord} > Escolher palavra</button>
                     <div className="palavraX">
-                        {selected ? Palavras() : ''}
+                       {caracteres.map((l)=> <p className="traco">{selectLetters.includes(l) ? l : '-' }</p>)}
                     </div>
 
                 </div>
