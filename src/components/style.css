@@ -44,6 +44,12 @@ main .right-side{
     border-radius: 3px;
     margin-right: 4px;
 }
+.palavraX .letra{
+    margin-right: 4px;
+    color: black;
+    font-size: 20px;
+}
+
 .chute{
     display: flex;
     max-width: 1000px;

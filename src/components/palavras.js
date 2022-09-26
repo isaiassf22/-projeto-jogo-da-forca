@@ -31,7 +31,7 @@
 
 
 
-       const palavraEscolhida =palavras[Math.floor(Math.random()*(palavras.length-1))]
+       const palavraEscolhida =semAcento[Math.floor(Math.random()*(palavras.length-1))]
         const caracteres =palavraEscolhida.split('')
 export {palavraEscolhida}
 export {caracteres}

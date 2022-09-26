@@ -23,10 +23,14 @@ export default function Jogar() {
     }
     //selecionar as fotos de acordo com os erros
     const [photos, setPhotos] = React.useState(forc0)
-    let erro = 0
+    //verificar numero de erros
+    const [erro,setErro]=React.useState(0)
+    
+    const [acerto,setAcerto]=React.useState(0)
 
+    let tracos = []
 
-
+    let factor=''
 
     function Palavras() {
 
@@ -34,7 +38,6 @@ export default function Jogar() {
 
         let quantidadeDeLetras = palavraEscolhida.length
         const traco = <div className="traco"></div>
-        let tracos = []
         console.log(caracteres)
         function numerTracos() {
             for (let i = 0; i < quantidadeDeLetras; i++) {
@@ -49,9 +52,10 @@ export default function Jogar() {
             </>
         )
     }
+    const [result,currentResult]=React.useState(tracos)
 
+    
     function Letters(){
-        let factor=''
         function letter (props){
             factor=props
             console.log(factor)
@@ -59,39 +63,49 @@ export default function Jogar() {
                 if(caracteres[i]===factor){
                     console.log(`achei um ${factor}`)
                     console.log(i)
+                    console.log(tracos)
+                    tracos[i]= <div class='letra'>${factor}</div>
+                    
                 }
+                currentResult(tracos)
+                
             }
             
-            erro+=1
-           
-            switch (erro) {
-                case erro = 1:
+            if (palavraEscolhida.includes(factor)===false){
+                setErro(erro+1)
+           const listImg=[forc1,forc2,forc3,forc4,forc5,forc6]
+           setPhotos(listImg[erro])
+            /*switch (erro) {
+                case erro === 1:
                     setPhotos(forc1)
                     break;
-                case erro = 2:
+                case erro === 2:
                     setPhotos(forc2)
                     break;
-                case erro = 3:
+                case erro === 3:
                     setPhotos(forc3)
                     break;
-                case erro = 4:
+                case erro === 4:
                     setPhotos(forc4)
                     break;
-                case erro = 5:
+                case erro === 5:
                     setPhotos(forc5)
                     break;
-                case erro = 6:
+                case erro === 6:
                     setPhotos(forc6)
                     break;
                     default:
                         
+            }*/
+
+            console.log(`esta no ${erro+1} erro`)
             }
-            console.log(`esta no ${erro} erro`)
+            
         }
-        const renderAlfabeto=alfabeto.map((n)=> <button onClick={()=>letter(n)}>{n}</button>)
+        //const renderAlfabeto=alfabeto.map((n)=> <button onClick={()=>letter(n)}>{n}</button>)
         return(
             <div className="botoes">
-                {renderAlfabeto}
+                {alfabeto.map((n)=> <button key={n} onClick={()=>letter(n)}>{n}</button>)}
             </div>
         )
     }
@@ -106,7 +120,7 @@ export default function Jogar() {
             if(keyWord===palavraEscolhida){
                alert('acertou miseravi!!') 
             }else{
-                erro=6
+                setPhotos(forc6)
             }
             
         }
