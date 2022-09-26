@@ -27,7 +27,7 @@
 
      
     const semAcento=palavras.map((n)=>n.normalize('NFD').replace(/[\u0300-\u036f]/g, ""))
-    
+    export {semAcento}
 
 
 
