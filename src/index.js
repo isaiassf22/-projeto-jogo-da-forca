@@ -1,6 +1,6 @@
 import React from "react";
 import  reactDOM  from "react-dom";
-import Jogar from "./components/jogo"
+import Jogar from "./components/app"
 
 
 

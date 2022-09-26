@@ -1,4 +1,4 @@
-export default function palavras(){
+
     const palavras = [
         "abacate", "abacaxi", "abelha", "abanador", "antologia", "amor", "aba", "abraço", "ábaco", "abrigo", "abrir", 
         "banana", "boi", "batata", "bacalhau", "bexiga", "bowl", "batedeira", "bisturi", "barreira", "banco", 
@@ -24,6 +24,14 @@ export default function palavras(){
         "xícara", "xadrez", "xilofone", "xarope", "xenofobia", "xereta", "xerife", "xaveco", "xixi", "xale", 
         "zebra", "zagueiro", "zero", "zoeira", "zodíaco", "zangão", "zepelim", "zinco", "zoológico", "zumbido"
     ]
+
+     
+    const semAcento=palavras.map((n)=>n.normalize('NFD').replace(/[\u0300-\u036f]/g, ""))
     
-    
-}
+
+
+
+       const palavraEscolhida =palavras[Math.floor(Math.random()*(palavras.length-1))]
+        const caracteres =palavraEscolhida.split('')
+export {palavraEscolhida}
+export {caracteres}

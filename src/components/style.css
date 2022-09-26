@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+*{box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;  }
+.botoes{
+    display: flex;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+.botoes button{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-color: rgba(165, 158, 158, 0.253);
+}
+main{
+    display: flex;
+    position: relative;
+    background-color: aquamarine;
+}
+main button.escolher{
+    width: 230px;
+    height: 60px;
+    font-size: 17px;
+    background-color: rgb(89, 255, 47);
+    color: #fff;
+    border-radius: 5px;
+    margin: 70px 100px;
+}
+
+main .right-side{
+    display: flex;
+    flex-direction: column;
+}
+.palavraX{
+    margin: auto 0;
+    margin-left: 100px;
+    display: flex;
+
+}
+.palavraX .traco{
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+.chute{
+    display: flex;
+    max-width: 1000px;
+    
+    justify-content: center;  
+}
+.chute button{
+    width: 80px;
+    height: 50px;
+    background-color: aqua;
+    margin: auto 0 ;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.chute p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.chute input{
+    width: 350px;
+    height: 35px;
+    margin: auto 0;
+    text-align: center;
+    font-size: 16px;
+}
